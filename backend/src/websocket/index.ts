@@ -25,7 +25,12 @@ let io: SocketIOServer | null = null;
 export function initializeWebSocket(server: HttpServer): SocketIOServer {
     io = new SocketIOServer(server, {
         cors: {
-            origin: env.FRONTEND_URL,
+            origin: [
+                env.FRONTEND_URL,
+                'https://city-pulse-ai-1sta.vercel.app',
+                'http://localhost:3000',
+                'http://localhost:3001',
+            ],
             methods: ['GET', 'POST'],
             credentials: true,
         },
