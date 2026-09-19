@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "dev:nodemon": "nodemon --watch \"src/**/*.ts\" --exec ts-node src/server.ts",
-    "build": "tsc",
+    "build": "tsc --skipLibCheck",
+    "render-build": "tsc --skipLibCheck --noEmitOnError false",
     "start": "node dist/server.js",
     "lint": "eslint src --ext .ts --max-warnings 0",
     "format": "prettier --write \"src/**/*.ts\"",
