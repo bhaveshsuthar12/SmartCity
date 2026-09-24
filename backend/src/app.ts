@@ -44,6 +44,7 @@ export function createApp(): Application {
                 // Allow same-origin requests and configured or local dev frontend URLs
                 const allowedOrigins = [
                     env.FRONTEND_URL,
+                    'https://smart-city-blond-ten.vercel.app',
                     'https://city-pulse-ai-1sta.vercel.app',
                     'http://localhost:3000',
                     'http://127.0.0.1:3000',
