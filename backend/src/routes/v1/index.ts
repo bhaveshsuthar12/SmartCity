@@ -71,6 +71,10 @@ router.use('/digital-twin', digitalTwinRoutes);
 import emergencyRoutes from './emergency.routes';
 router.use('/emergency', emergencyRoutes);
 
+// Phase 21 - Accident Response System (Cameras, Incidents, Hospitals, AI Detection)
+import accidentRoutes from './accident.routes';
+router.use('/', accidentRoutes);
+
 // Phase 18 - Predictive Maintenance & AI Registry
 import aiModelRoutes from './aiModel.routes';
 import aiPredictionRoutes from './aiPrediction.routes';

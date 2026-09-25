@@ -106,6 +106,11 @@ export const WS_EVENTS = {
     STREETLIGHT_INCIDENT_CREATED: 'streetlight:incident-created',
     STREETLIGHT_INCIDENT_UPDATED: 'streetlight:incident-updated',
     STREETLIGHT_CONTROL_UPDATED: 'streetlight:control-updated',
+
+    // Accident Response System (Phase 21)
+    ACCIDENT_INCIDENT_CREATED: 'accident:incident-created',
+    ACCIDENT_INCIDENT_UPDATED: 'accident:incident-updated',
+    ACCIDENT_CAMERA_STATUS_CHANGED: 'accident:camera-status-changed',
 } as const;
 
 export type WsEvent = (typeof WS_EVENTS)[keyof typeof WS_EVENTS];

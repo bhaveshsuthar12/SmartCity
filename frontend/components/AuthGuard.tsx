@@ -3,7 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useRouter, usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { LogOut, Map, Users, Shield, Truck, ClipboardList, User } from 'lucide-react';
+import { LogOut, Map, Users, Shield, Truck, ClipboardList, User, AlertTriangle, Camera, Building2, BarChart3 } from 'lucide-react';
 import { NotificationBell } from './ui/NotificationBell';
 import { CityPulseLogo } from './ui/CityPulseLogo';
 
@@ -87,6 +87,23 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
                     <Link href="/admin/reports" className={`flex items-center px-3 py-2.5 rounded-lg transition-colors ${pathname === '/admin/reports' ? 'bg-blue-600/20 text-blue-400 font-semibold' : 'hover:bg-slate-800 text-slate-300 hover:text-white'}`}>
                         <ClipboardList className="w-5 h-5 mr-3 opacity-70" /> Manage Reports
                     </Link>
+
+                    {/* Accident Response */}
+                    <div className="pt-2">
+                        <p className="px-3 text-[10px] text-slate-500 uppercase tracking-widest mb-1">Accident Response</p>
+                        <Link href="/admin/accidents" className={`flex items-center px-3 py-2 rounded-lg transition-colors text-sm ${pathname === '/admin/accidents' ? 'bg-red-600/20 text-red-400 font-semibold' : 'hover:bg-slate-800 text-slate-300 hover:text-white'}`}>
+                            <AlertTriangle className="w-4 h-4 mr-3 opacity-70" /> Dashboard
+                        </Link>
+                        <Link href="/admin/accidents/cameras" className={`flex items-center px-3 py-2 rounded-lg transition-colors text-sm ${pathname.startsWith('/admin/accidents/cameras') ? 'bg-blue-600/20 text-blue-400 font-semibold' : 'hover:bg-slate-800 text-slate-300 hover:text-white'}`}>
+                            <Camera className="w-4 h-4 mr-3 opacity-70" /> Cameras
+                        </Link>
+                        <Link href="/admin/accidents/hospitals" className={`flex items-center px-3 py-2 rounded-lg transition-colors text-sm ${pathname.startsWith('/admin/accidents/hospitals') ? 'bg-green-600/20 text-green-400 font-semibold' : 'hover:bg-slate-800 text-slate-300 hover:text-white'}`}>
+                            <Building2 className="w-4 h-4 mr-3 opacity-70" /> Hospitals
+                        </Link>
+                        <Link href="/admin/accidents/analytics" className={`flex items-center px-3 py-2 rounded-lg transition-colors text-sm ${pathname.startsWith('/admin/accidents/analytics') ? 'bg-purple-600/20 text-purple-400 font-semibold' : 'hover:bg-slate-800 text-slate-300 hover:text-white'}`}>
+                            <BarChart3 className="w-4 h-4 mr-3 opacity-70" /> Analytics
+                        </Link>
+                    </div>
 
                     {user.role === 'SUPER_ADMIN' && (
                         <>

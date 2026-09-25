@@ -107,3 +107,8 @@ export * from './IoTDeviceIncident';
 export * from './OptimizationRecommendation';
 export * from './OptimizationScenario';
 export * from './MaintenancePlan';
+
+// Phase 21: Accident Response System
+export * from './AccidentCamera';
+export * from './AccidentHospital';
+export * from './AccidentIncident';
